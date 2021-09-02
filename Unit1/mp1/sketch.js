@@ -14,7 +14,7 @@ function draw() {
 
   if (mouseIsPressed) {
     // stuff that shows when the mouse is pressed
-
+    ellipse(100,100,100,100);l
   } else {
     // when the mouse isn't pressed!
 

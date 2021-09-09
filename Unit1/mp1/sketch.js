@@ -42,7 +42,7 @@ function draw() {
     ellipse(50,720,200,200);
     ellipse(650,720,200,200);
 
-
+    fill("#deca5b");
     text("The sounds of the road put him to sleep at night.", 40, 40);
 
 

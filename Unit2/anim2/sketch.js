@@ -70,7 +70,7 @@ function draw() {
       // when the mouse isn't pressed!
         background("#42cbf5");
 
-        noStroke();
+      noStroke();
       fill("red");
      quad(0,87,534,165,723,450,0,460);
       rect(-400,430,2000,300);

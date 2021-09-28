@@ -12,7 +12,7 @@ textSize(32);
 
     case 0:
       background("grey");
-      text("  why did the scarecrow \nget a promotion", 60, 200,400,400);
+      text("  why did the cat \nget a promotion", 60, 200,400,400);
       break;
 
     case 1:

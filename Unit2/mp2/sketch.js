@@ -6,6 +6,8 @@ let mic;
 let vol;
 let leaf, state0, state1, Bigpapa;
 
+//CODE FREEZE 9:01pm 10/5/2021
+
 function setup() {
   createCanvas(800, 750);
 textSize(20);

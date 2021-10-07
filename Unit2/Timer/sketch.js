@@ -2,7 +2,7 @@ let state = 0;
 let timer = 0 ;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(400, 300);
 }
 
 function draw() {
@@ -17,7 +17,7 @@ function draw() {
       text("state 0", 100,100);
        timer++;
 
-  if(timer > 5 * 60){
+  if(timer > 10 * 60){
     timer = 0;
 
 

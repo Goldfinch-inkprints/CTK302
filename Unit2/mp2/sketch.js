@@ -4,7 +4,7 @@ let y = 1000;
 let x = 200;
 let mic;
 let vol;
-let leaf, state0, state1, Bigpapa;
+let bg01,bg02,bg03,bg04, state0, state1, Bigpapa;
 
 //CODE FREEZE 9:01pm 10/5/2021
 
@@ -19,6 +19,10 @@ leaf = loadImage("assets/leaf.png") ;
 state0 = loadImage("assets/state0.png") ;
 state1 = loadImage("assets/state1.png") ;
 Bigpapa = loadImage("assets/Bigpapa.png") ;
+bg01 = loadImage("assets/bg01.png") ;
+bg02 = loadImage("assets/bg02.png") ;
+bg03 = loadImage("assets/bg03.png") ;
+bg04 = loadImage("assets/bg04.png") ;
 strokeWeight(10);
 textSize(25);
 
@@ -30,16 +34,18 @@ function draw() {
 
   switch (state) {
     case 0:
-  background('pink');
-  text("Click to begin!", 400, 750/2);
-  text ("Let's help Mark reach his lunch!", 400, 750/2+50);
+
+  image(bg01, 0,0);
+
   break;
 case 1:
-  background ('lightblue');
-  text("Mark is very hungry but he know \nthe best leaves are at the top!\nWait for it.. \nMark has to find the tallest tree", 550, 200);
-  image(state0, 200,75);
+    image(bg02, 0,0);
+  text("Mark is very hungry but he know \nthe best leaves are at the top!\nWait for it.. \nMark has to find the tallest tree", 450, 200);
+
+
+  image(state0, 100,75);
   timer++;
-  if(timer > 3 * 60){
+  if(timer > 8 * 60){
     timer = 0;
 
     state++;
@@ -49,8 +55,8 @@ case 1:
   }  break;
 
 case 2:
-  background('lightblue');
-  text("Cheer for Mark to help him reach!", 350, 750/2);
+  image(bg02, 0,0);
+  text("Cheer for Mark to help him reach!", 350, 150);
     vol = (mic.getLevel().toFixed(2));
     image(Bigpapa, x,y);
   if (vol > .001) {
@@ -64,8 +70,8 @@ case 2:
   break;
 
 case 3:
-  background ("lightgreen");
-  text("Oh high Mark!", 350, 750/2);
+  image(bg03, 0,0);
+  text("Oh high Mark!", 350, 150);
     vol = (mic.getLevel().toFixed(2));
     image(Bigpapa, x,y);
   if (vol > .01) {
@@ -79,9 +85,9 @@ case 3:
   break;
 
 case 4:
-background ("lightgreen");
-text ("You helped Mark get a tasty lunch! \nGreat Job!", 350, 150);
-image(leaf, 250,200);
+image(bg04, 0,0);
+
+
 
 break;
 

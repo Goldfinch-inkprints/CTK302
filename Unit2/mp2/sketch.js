@@ -4,7 +4,7 @@ let y = 1000;
 let x = 200;
 let mic;
 let vol;
-let bg01,bg02,bg03,bg04, state0, state1, Bigpapa;
+let bg01fix,bg02,bg03,bg04, state0, state1, Bigpapa;
 
 //CODE FREEZE 9:01pm 10/5/2021
 
@@ -19,7 +19,7 @@ leaf = loadImage("assets/leaf.png") ;
 state0 = loadImage("assets/state0.png") ;
 state1 = loadImage("assets/state1.png") ;
 Bigpapa = loadImage("assets/Bigpapa.png") ;
-bg01 = loadImage("assets/bg01.png") ;
+bg01fix = loadImage("assets/bg01fix.png") ;
 bg02 = loadImage("assets/bg02.png") ;
 bg03 = loadImage("assets/bg03.png") ;
 bg04 = loadImage("assets/bg04.png") ;
@@ -35,7 +35,7 @@ function draw() {
   switch (state) {
     case 0:
 
-  image(bg01, 0,0);
+  image(bg01fix, 0,0);
 
   break;
 case 1:

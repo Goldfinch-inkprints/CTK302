@@ -61,7 +61,7 @@ case 2:
     vol = (mic.getLevel().toFixed(2));
     image(Bigpapa, x,y);
   if (vol > .001) {
-    y = y + -1;
+    y = y + -1 ;
     if (y < -400){
       state = state + 1;
       y = 800;

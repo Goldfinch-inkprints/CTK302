@@ -1,3 +1,4 @@
+
 let state = 0;
 let timer = 0;
 let y = 1000;
@@ -24,7 +25,7 @@ bg02 = loadImage("assets/bg02.png") ;
 bg03 = loadImage("assets/bg03.png") ;
 bg04 = loadImage("assets/bg04.png") ;
 strokeWeight(10);
-textSize(25);
+textSize(24);
 
 
 }
@@ -60,7 +61,7 @@ case 2:
     vol = (mic.getLevel().toFixed(2));
     image(Bigpapa, x,y);
   if (vol > .001) {
-    y = y + -10;
+    y = y + -1;
     if (y < -400){
       state = state + 1;
       y = 800;

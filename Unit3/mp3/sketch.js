@@ -137,6 +137,7 @@ function resetGame() {
   hosts = [];
   axes = [];
   captured = 0;
+  
 
   // Spawn many object
   for (let i = 0; i < maxHosts; i++) {

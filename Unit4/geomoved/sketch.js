@@ -1,13 +1,13 @@
 var num;
 var distance;
-var font1, font2;
+var font1;
 
 var locationData;
 
 
 function preload() {
   locationData = getCurrentPosition();
-  font1 = loadFont("assets/Mohave-Light.ttf");
+  font1 = loadFont("assets/Lunch.ttf");
 }
 
 function setup() {

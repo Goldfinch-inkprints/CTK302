@@ -1,20 +1,19 @@
 var num;
 var distance;
-var font1;
 
 var locationData;
 
 
 function preload() {
   locationData = getCurrentPosition();
-  font1 = loadFont("assets/Lunch.ttf");
+
 }
 
 function setup() {
   // createCanvas(windowWidth, windowHeight);
     createCanvas(displayWidth, displayHeight);
   num = 0;
-  textFont(font1, 36);
+  textSize(36);
   intervalCurrentPosition(positionPing, 5000); // this is what calls positionPing function
 
 

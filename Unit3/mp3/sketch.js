@@ -3,7 +3,7 @@ let axes = [];
 let maxAxes = 4;
 let maxHosts = 2;
 let state = 0;
-let timer = 0;
+let timerValue = 30 * 60;
 let captured = 0;
 let start, play, win, lose, axe, ghost, guy;
 let guyPos;
@@ -48,11 +48,6 @@ function draw() {
 
     case 1: // game state
       game();
-      timer++;
-      if (timer > 80 * 60) {
-        state = 3;
-        timer = 0;
-      }
 
       break;
 
@@ -78,12 +73,12 @@ function mouseReleased() {
       state = 1;
       break;
 
-    case 2:
+    case 2: //win
       resetGame();
-      //state:0
+      state:0
       break;
 
-    case 3:
+    case 3:// lose
       resetGame()
       state = 0;
       break;
@@ -94,17 +89,20 @@ function game() {
 
   image(play, 0, 0, 1280, 720);
   // you would put background image here
+  if (timerValue > 0) {
+    timerValue--;
+  }
+
 
 
   for (let i = 0; i < axes.length; i++) {
     axes[i].display();
     axes[i].move();
-
-    if (axes[i].pos.dist(guyPos) < 50) {
+    if (axes[i].pos.dist(guyPos) < 80) {
       state = 3;
-
     }
   }
+
 
  for (let i = 0; i < hosts.length; i++) {
     hosts[i].display();
@@ -118,8 +116,6 @@ function game() {
 
  if (hosts.length == 0) {
     state = 2;
-    timer = 0;
-
   }
 
   //print how many cars are left
@@ -133,25 +129,24 @@ function game() {
 }
 
 function resetGame() {
-  timer = 0;
+  let timerValue = 30 * 60;
+  let ghostTimer = 0;
   hosts = [];
   axes = [];
   captured = 0;
-  
+
 
   // Spawn many object
   for (let i = 0; i < maxHosts; i++) {
     hosts.push(new Host());
+  }
 
     for (let i = 0; i < maxAxes; i++) {
       axes.push(new Axe());
-
+}
       //initialize position
       guyPos = createVector(width / 2, height - 320);
-    }
-
-  }
-  state = 0;
+      state = 0;
 }
 
 function checkForKeys() {
@@ -190,23 +185,22 @@ class Axe {
 
   constructor() {
     this.pos = createVector(random(width), random(height - 120));
-
-
+    this.vel = createVector(random(-3,3), random(-3,3));
 
   }
 
   display() {
     push();
+    imageMode(CENTER);
+    translate(this.pos.x, this.pos.y) ;
     rotate(angle);
-    image(axe, this.pos.x, this.pos.y);
+    image(axe, 0, 0);
     angle += .2;
     pop();
   }
 
-
-
   move() {
-
+    this.pos.add(this.vel);
 
     if (this.pos.x > width) this.pos.x = 10;
     if (this.pos.x < 10) this.pos.x = width;

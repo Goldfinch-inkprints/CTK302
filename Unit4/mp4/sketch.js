@@ -76,7 +76,7 @@ function draw() {
   fill('white');
   textSize(40);
   textAlign(CENTER);
-  text("Click the button to bring in the dragon! \n Shake to scare the dragonflies away!", width / 2, 600, windowWidth - 200, windowHeight - 200);
+  text("Click above to release the dragon \n Shake for more dragonflies!", width / 2, 600, windowWidth - 200, windowHeight - 200);
 
 
   // Debugging information -- take this out when you're ready for production!

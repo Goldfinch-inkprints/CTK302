@@ -6,7 +6,7 @@ var z = 0;
 var xPosition = 0;
 var yPosition = 0;
 
-var dragonfly;
+var dragonfly,firedragon;
 var cars = [];
 var frogPos;
 
@@ -31,6 +31,7 @@ function setup() {
 
   // load any images you need
   dragonfly = loadImage("assets/dragonfly.png");
+  firedragon = loadImage("assets/firedragon.png");
   imageMode(CENTER);
   rectMode(CENTER);
   noStroke();
@@ -53,9 +54,8 @@ function draw() {
   //  rotate(radians(alpha)); // using alpha in here so it doesn't feel bad
 
   // draw the FROG
-  image(dragonfly, 0, 0, 500, 500);
-  fill('green');
-  ellipse(0, 0, 80, 80);
+  image(firedragon, 0, 0, 500, 500);
+
   pop();
 
 
@@ -76,7 +76,7 @@ function draw() {
   fill('white');
   textSize(40);
   textAlign(CENTER);
-  text("Shake to hide the Dragonflies!", width / 2, 600, windowWidth - 200, windowHeight - 200);
+  text("Click the button to bring in the dragon! \n Shake to scare the dragonflies away!", width / 2, 600, windowWidth - 200, windowHeight - 200);
 
 
   // Debugging information -- take this out when you're ready for production!

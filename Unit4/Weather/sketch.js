@@ -43,6 +43,7 @@ function gotData(data) {
 
 
 function draw() {
+
   switch (myState) {
     case 0:
       if (weather) {
@@ -72,6 +73,8 @@ function draw() {
            fill('gray');
            noStroke();
            ellipse(x, 175, 200, 100);
+            ellipse(x, 125, 100, 100);
+            ellipse(x-100, 150, 150, 100);
 
       // move the cloud's x position
       x = x + windspeed/3;

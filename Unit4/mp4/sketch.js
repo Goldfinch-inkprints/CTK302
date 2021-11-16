@@ -6,7 +6,7 @@ var z = 0;
 var xPosition = 0;
 var yPosition = 0;
 
-// var bunnyImage;
+var dragonfly;
 var cars = [];
 var frogPos;
 
@@ -30,7 +30,7 @@ function setup() {
   frogPos = createVector(width / 2, height - 80);
 
   // load any images you need
-  //bunnyImage = loadImage("assets/bunny.jpg");
+  dragonfly = loadImage("assets/dragonfly.png");
   imageMode(CENTER);
   rectMode(CENTER);
   noStroke();
@@ -53,7 +53,7 @@ function draw() {
   //  rotate(radians(alpha)); // using alpha in here so it doesn't feel bad
 
   // draw the FROG
-  // image(bunnyImage, 0, 0, 500, 500);
+  image(dragonfly, 0, 0, 500, 500);
   fill('green');
   ellipse(0, 0, 80, 80);
   pop();
@@ -76,25 +76,25 @@ function draw() {
   fill('white');
   textSize(40);
   textAlign(CENTER);
-  text("your words or image here!", width / 2, 600, windowWidth - 200, windowHeight - 200);
+  text("Shake to hide the Dragonflies!", width / 2, 600, windowWidth - 200, windowHeight - 200);
 
 
   // Debugging information -- take this out when you're ready for production!
   // Just a bunch of text commands to display data coming in from addEventListeners
-  textAlign(LEFT);
-  textSize(20);
-  fill('black');
-  text("orientation data:", 25, 25);
-  textSize(15);
-  text("alpha: " + alpha, 25, 50);
-  text("beta: " + beta, 25, 70);
-  text("gamma: " + gamma, 25, 90);
-  textSize(20);
-  text("acceleration data:", 25, 125);
-  textSize(15);
-  text("x = " + x, 25, 150); // .toFixed means just show (x) decimal places
-  text("y = " + y, 25, 170);
-  text("z = " + z, 25, 190);
+  // textAlign(LEFT);
+  // textSize(20);
+  // fill('black');
+  // text("orientation data:", 25, 25);
+  // textSize(15);
+  // text("alpha: " + alpha, 25, 50);
+  // text("beta: " + beta, 25, 70);
+  // text("gamma: " + gamma, 25, 90);
+  // textSize(20);
+  // text("acceleration data:", 25, 125);
+  // textSize(15);
+  // text("x = " + x, 25, 150); // .toFixed means just show (x) decimal places
+  // text("y = " + y, 25, 170);
+  // text("z = " + z, 25, 190);
 
 
 }
@@ -145,11 +145,13 @@ function Car() {
   this.display = function() {
 
     // maybe use an image here instead!
-    fill(this.r, this.g, this.b, this.a);
-    ellipse(this.pos.x - 50, this.pos.y, 50, 50);
-    ellipse(this.pos.x + 50, this.pos.y, 50, 50);
-    rect(this.pos.x + 17, this.pos.y - 30, 80, 60) ;
 
+    fill(this.r, this.g, this.b, this.a);
+    ellipse(this.pos.x - 8, this.pos.y - 50, 10, 10);
+    ellipse(this.pos.x + 8, this.pos.y - 50, 10, 10);
+    rect(this.pos.x, this.pos.y - 33, 96, 15) ;
+    rect(this.pos.x, this.pos.y - 17, 50, 12) ;
+    image(dragonfly, this.pos.x, this.pos.y,100,100);
   }
 
   this.drive = function() {

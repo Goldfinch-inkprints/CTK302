@@ -11,7 +11,7 @@ let x = 0, y = 0, z = 0 ; // accelerometer data
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
-
+  font2 = loadFont("assets/ROMANUS.otf");
 
 
   bunnyImage = loadImage("assets/redpanda.png");
@@ -60,7 +60,7 @@ function draw() {
   // Text that makes CTK type in the background
   fill('white');
   noStroke();
-  textSize(55);
+  textFont(font2, 55);
   textAlign(CENTER);
   text("cat-bear", width / 2, height / 2);
 
